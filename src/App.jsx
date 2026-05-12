@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './index.css';
 
 function App() {
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const finalStr = 'shivansh';
+    const chars = 'sS@#$%&*+-';
+    let iteration = 0;
+    const intervalTime = 50; 
+    const maxIterations = 35; // 35 * 50 = 1750ms (1.75s)
+    
+    const intervalId = setInterval(() => {
+      let result = '';
+      iteration++;
+      
+      for (let i = 0; i < finalStr.length; i++) {
+        const threshold = (maxIterations / finalStr.length) * (i + 1);
+        if (iteration >= threshold) {
+          result += finalStr[i];
+        } else {
+          result += chars[Math.floor(Math.random() * chars.length)];
+        }
+      }
+      
+      if (titleRef.current) {
+        titleRef.current.innerText = result;
+      }
+      
+      if (iteration >= maxIterations) {
+        clearInterval(intervalId);
+        if (titleRef.current) {
+          titleRef.current.innerText = finalStr;
+        }
+      }
+    }, intervalTime);
+    
+    return () => clearInterval(intervalId);
+  }, []);
   return (
     <div className="container">
       {/* 1. HEADER BLOCK */}
@@ -13,7 +49,7 @@ function App() {
         
         <div className="main-display">
           <div className="main-title">
-            shivansh <span className="sys-tag">[SYS]</span>
+            <span ref={titleRef}>shivansh</span> <span className="sys-tag">[SYS]</span>
           </div>
           
           <div className="contact-registry">
