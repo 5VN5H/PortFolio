@@ -20,8 +20,8 @@ const GetInTouch = () => {
       id: 'linkedin',
       handle: 'linkedin.com/in/shivansh',
       url: 'https://linkedin.com/in/shivansh',
-      color: '#7C3AED',
-      bg: '#7C3AED',
+      color: '#0077B5',
+      bg: '#0077B5',
       textColor: '#ffffff',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="git-icon" stroke="none">
