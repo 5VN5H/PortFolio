@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import './index.css';
+import CyberHudCursor from './CyberHudCursor';
+import DynamicGreeting from './DynamicGreeting';
+import ExpertiseEducation from './ExpertiseEducation';
+import GetInTouch from './GetInTouch';
 
 function App() {
   const titleRef = useRef(null);
 
   useEffect(() => {
-    const finalStr = 'shivansh';
+    const finalStr = 'SHIVANSH';
     const chars = 'sS@#$%&*+-';
     let iteration = 0;
     const intervalTime = 50; 
@@ -39,7 +43,8 @@ function App() {
     return () => clearInterval(intervalId);
   }, []);
   return (
-    <div className="container">
+    <>
+      <div className="container">
       {/* 1. HEADER BLOCK */}
       <header>
         <div className="meta-bar">
@@ -47,12 +52,14 @@ function App() {
           <div>STATUS: SECURE // OPEN_FOR_WORK ┐</div>
         </div>
         
-        <div className="main-display">
-          <div className="main-title">
-            <span ref={titleRef}>shivansh</span> <span className="sys-tag">[SYS]</span>
+        <div className="main-display" style={{ position: 'relative', overflow: 'hidden' }}>
+          <CyberHudCursor />
+          <DynamicGreeting />
+          <div className="main-title" style={{ position: 'relative', zIndex: 10 }}>
+            <span ref={titleRef}>SHIVANSH</span> <span className="sys-tag">[SYS]</span>
           </div>
           
-          <div className="contact-registry">
+          <div className="contact-registry" style={{ position: 'relative', zIndex: 10 }}>
             <div className="contact-label">PHONE:</div>
             <div>+91 88824-93607</div>
             
@@ -68,105 +75,92 @@ function App() {
         </div>
       </header>
 
-      {/* 2. EDUCATION BLOCK */}
-      <section className="education-block hover-invert">
-        <div className="edu-title">
-          Delhi Technological University (DTU) — B.Tech in Software Engineering // Expected May 2028 // GPA: 7.4/10
-        </div>
-        <div className="edu-subtext">
-          COURSEWORK: Data Structures & Algorithms, Machine Learning, Database Systems, Software Engineering, Computer Networks
-        </div>
-      </section>
 
-      {/* 3. EXPERIENCE & PROJECTS */}
-      <section>
-        <table className="experience-table">
-          <thead>
-            <tr>
-              <th className="id-col">[ID]</th>
-              <th className="role-col">[MODULE / ROLE]</th>
-              <th className="tech-col">[TECH STACK]</th>
-              <th className="spec-col">[SPECIFICATIONS / IMPACT]</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="hover-invert">
-              <td className="id-col">EXP-01</td>
-              <td className="role-col">ONGC | Software Intern (Rig Power & BESS)</td>
-              <td className="tech-col">Python, Pandas, NumPy</td>
-              <td className="spec-col">Cleaned 10k+ records EDA; resolved sensor noise. Flagged 15-20% fuel efficiency gaps; delivered adopted BESS feasibility report.</td>
-            </tr>
-            <tr className="hover-invert">
-              <td className="id-col">RND-01</td>
-              <td className="role-col">IIT Mandi | Research Intern (EEG Signal Modeling)</td>
-              <td className="tech-col">Transformers, CBAM, SSL</td>
-              <td className="spec-col">Designed attention SSL model with contrastive pipelines. Achieved &lt;10% labeled data dependency across clinical tasks.</td>
-            </tr>
-            <tr className="hover-invert">
-              <td className="id-col">PRJ-01</td>
-              <td className="role-col">SmartCourt | AI Football Tactical Analysis</td>
-              <td className="tech-col">PyTorch, GNN, GAT, CVAE</td>
-              <td className="spec-col">Built GAT to model player interactions; CVAE for defensive simulation. Full match pipeline processes in &lt;3 minutes. [GIT]</td>
-            </tr>
-            <tr className="hover-invert">
-              <td className="id-col">PRJ-02</td>
-              <td className="role-col">DABOT | AI DSA Tutor Chatbot</td>
-              <td className="tech-col">OpenAI, QWEN, RAG, FastAPI</td>
-              <td className="spec-col">Multimodal step-by-step tutor. RAG integrated to cut hallucinations. Deployed web app with &lt;2s average response latency. [LINK]</td>
-            </tr>
-            <tr className="hover-invert">
-              <td className="id-col">PRJ-03</td>
-              <td className="role-col">MahaKumbh 25 | Water Quality Analysis</td>
-              <td className="tech-col">WQI 1.0, Time-Series</td>
-              <td className="spec-col">Evaluated 7 Ganga-Yamuna sites. Identified marginal bands (WQI 49-63); compiled policy-level environmental report. [PDF]</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      {/* 4. BOTTOM PANELS */}
-      <section className="bottom-panels">
-        {/* Node A */}
-        <div className="panel hover-invert">
-          <div className="panel-title">[NODE_A: SYSTEM_SKILLS]</div>
-          <ul className="skill-list">
-            <li><strong>[LANGUAGES]:</strong><br/>Python (primary), C++, SQL</li>
-            <li><strong>[ML_DL_MODELS]:</strong><br/>PyTorch, Scikit-learn, GNN, GAT, CVAE, Transformers, CBAM, SSL</li>
-            <li><strong>[DOMAINS]:</strong><br/>Computer Vision, NLP, Graph Networks, RAG</li>
-          </ul>
-        </div>
+      {/* 3. PROJECT(S) */}
+      <section className="projects-section">
+        <h2 className="section-title">Project(s)</h2>
         
-        {/* Node B */}
-        <div className="panel hover-invert">
-          <div className="panel-title">[NODE_B: LEADERSHIP]</div>
-          <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-            <strong>Co-Head, Paryavarnam</strong><br/>
-            (DTU Env Society)<br/><br/>
-            Led 20-member team for sustainability drive (2,000+ participants). Initiated campus waste-audit report.
+        <div className="metadata-grid">
+          <div className="meta-col">
+            <span className="meta-label">TYPE</span>
+            <div>Website, Visual / Brand, Ecommerce Platform, Web App, Mobile App.</div>
+          </div>
+          <div className="meta-col">
+            <span className="meta-label">YEAR</span>
+            <div>2024–Present.</div>
+          </div>
+          <div className="meta-col">
+            <span className="meta-label">DISCIPLINE</span>
+            <div>Full-Stack Dev, AI/ML Research, System Architecture, UI/UX Design.</div>
+          </div>
+          <div className="meta-action">
+            <button className="brutal-btn">HIDE PREVIEWS</button>
           </div>
         </div>
 
-        {/* Node C */}
-        <div className="panel hover-invert">
-          <div className="panel-title">[NODE_C: VERIFICATION]</div>
-          <ul className="verification-log">
-            <li>Finalist, TechFest MAIT 2025 (SmartCourt AI)</li>
-            <li>AI/ML Workshop Instructor for 200+ students</li>
-            <li>2nd Place, Spiritual Play Competition, TOVP Mayapur</li>
-          </ul>
-          <div className="ascii-box">
-            +-------------------+<br/>
-            | [ASCII_SCHEMA_NODE] |<br/>
-            +-------------------+
+        <div className="project-list">
+          {/* Row 01 */}
+          <div className="project-row hover-invert">
+            <div className="proj-index">01</div>
+            <div className="proj-color" style={{backgroundColor: '#2563EB'}}></div> {/* Blue */}
+            <div className="proj-title">SmartCourt — AI Football Tactical Analysis</div>
+            <div className="proj-tags">
+              <span className="brutal-tag">#AI_ML</span>
+              <span className="brutal-tag">#SYSTEMS</span>
+            </div>
+          </div>
+          
+          {/* Row 02 */}
+          <div className="project-row hover-invert">
+            <div className="proj-index">02</div>
+            <div className="proj-color" style={{backgroundColor: '#EF4444'}}></div> {/* Red */}
+            <div className="proj-title">DA_BOT — Data Structure Tutor Chatbot</div>
+            <div className="proj-tags">
+              <span className="brutal-tag">#FULLSTACK</span>
+              <span className="brutal-tag">#AI_ML</span>
+            </div>
+          </div>
+
+          {/* Row 03 */}
+          <div className="project-row hover-invert">
+            <div className="proj-index">03</div>
+            <div className="proj-color" style={{backgroundColor: '#D97706'}}></div> {/* Tan/Amber */}
+            <div className="proj-title">ONGC BESS — Rig Power Feasibility Report</div>
+            <div className="proj-tags">
+              <span className="brutal-tag">#DATA</span>
+              <span className="brutal-tag">#SYSTEMS</span>
+            </div>
+          </div>
+
+          {/* Row 04 */}
+          <div className="project-row hover-invert">
+            <div className="proj-index">04</div>
+            <div className="proj-color" style={{backgroundColor: '#EAB308'}}></div> {/* Neon Yellow/Yellow */}
+            <div className="proj-title">EEG Signal Modeler — SSL Clinical Pipeline</div>
+            <div className="proj-tags">
+              <span className="brutal-tag">#AI_ML</span>
+              <span className="brutal-tag">#RESEARCH</span>
+            </div>
+          </div>
+          
+          {/* Row 05 */}
+          <div className="project-row hover-invert">
+            <div className="proj-index">05</div>
+            <div className="proj-color" style={{backgroundColor: '#10B981'}}></div> {/* Green */}
+            <div className="proj-title">MahaKumbh 25 — Water Quality Analysis</div>
+            <div className="proj-tags">
+              <span className="brutal-tag">#DATA</span>
+              <span className="brutal-tag">#UI_UX</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 5. FOOTER TERMINAL */}
-      <footer className="footer-terminal">
-        └ // ARCHIVE LOG: COMPILED // SECURE • ENCRYPTED • STATIC_VERIFIED ┘
-      </footer>
+      <ExpertiseEducation />
+
+      <GetInTouch />
     </div>
+    </>
   );
 }
 
