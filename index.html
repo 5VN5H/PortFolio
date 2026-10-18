@@ -2,12 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shivansh - Portfolio</title>
+    <title>Shivansh — Software Engineer & ML Researcher</title>
+    <meta
+      name="description"
+      content="Shivansh — Software Engineering student at DTU and former ML research intern at IIT Mandi. Distributed backend systems, idempotent APIs, and label-efficient deep learning."
+    />
+    <meta name="author" content="Shivansh" />
+    <meta name="keywords" content="Shivansh, 5VN5H, software engineer, machine learning, DTU, IIT Mandi, FastAPI, PyTorch, portfolio" />
+    <link rel="canonical" href="https://5vn5h.github.io/PortFolio/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="theme-color" content="#18181b" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://5vn5h.github.io/PortFolio/" />
+    <meta property="og:title" content="Shivansh — Software Engineer & ML Researcher" />
+    <meta property="og:description" content="Distributed backend systems and label-efficient deep learning. B.Tech SE @ DTU, ex-Research Intern @ IIT Mandi." />
+    <meta property="og:image" content="https://5vn5h.github.io/PortFolio/favicon.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Shivansh",
+        "url": "https://5vn5h.github.io/PortFolio/",
+        "jobTitle": "Software Engineer & ML Researcher",
+        "alumniOf": "Delhi Technological University",
+        "sameAs": [
+          "https://linkedin.com/in/5vn5h",
+          "https://github.com/5VN5H",
+          "https://codeforces.com/profile/5VN5H"
+        ]
+      }
+    </script>
+
+    <!-- Apply saved / system theme before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        var t;
+        try { t = localStorage.getItem('theme'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>Shivansh — Software Engineer & ML Researcher. Email: contact2shiv4ansh@gmail.com</noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
